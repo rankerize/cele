@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Custom Properties ───────────────────────────────────────── */
+:root {
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-sharp: cubic-bezier(0.76, 0, 0.24, 1);
+  --dur-fast: 150ms;
+  --dur-normal: 300ms;
+  --dur-slow: 500ms;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#F9FAFB] text-slate-800 font-sans antialiased;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-50;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400;
+  }
+
+  input, textarea, select {
+    @apply bg-white border border-slate-200 text-slate-900 rounded-lg px-3 py-2 text-sm
+    focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent
+    placeholder-slate-400 transition-all duration-200 w-full shadow-sm;
+  }
+
+  label {
+    @apply text-sm font-medium text-slate-700 block mb-1.5;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 bg-brand-600 hover:bg-brand-500 
+    text-white font-medium text-sm rounded-lg transition-all duration-200 
+    disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 shadow-sm;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 bg-white hover:bg-slate-50 
+    text-slate-700 font-medium text-sm rounded-lg transition-all duration-200 
+    border border-slate-200 hover:border-slate-300 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 shadow-sm;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 bg-red-50 hover:bg-red-100 
+    text-red-600 font-medium text-sm rounded-lg transition-all duration-200 
+    border border-red-200 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95;
+  }
+
+  .card {
+    @apply bg-white border border-slate-200 rounded-xl p-5 transition-all duration-200 shadow-sm;
+  }
+
+  .card-hover {
+    @apply card hover:border-slate-300 hover:shadow-md;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-green {
+    @apply badge bg-emerald-100 text-emerald-700 border border-emerald-200;
+  }
+
+  .badge-blue {
+    @apply badge bg-brand-100 text-brand-700 border border-brand-200;
+  }
+
+  .badge-yellow {
+    @apply badge bg-amber-100 text-amber-700 border border-amber-200;
+  }
+
+  .badge-red {
+    @apply badge bg-red-100 text-red-700 border border-red-200;
+  }
+
+  .badge-purple {
+    @apply badge bg-purple-100 text-purple-700 border border-purple-200;
+  }
+
+  .badge-gray {
+    @apply badge bg-slate-100 text-slate-700 border border-slate-200;
+  }
+
+  .form-group {
+    @apply flex flex-col gap-1.5;
+  }
+
+  .section-title {
+    @apply text-lg font-semibold text-slate-900;
+  }
+
+  .field-error {
+    @apply text-xs text-red-500 mt-1;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-500
+    hover:text-slate-900 hover:bg-slate-100 transition-all duration-150 cursor-pointer;
+  }
+
+  .nav-item-active {
+    @apply nav-item text-slate-900 bg-slate-100 font-semibold;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-600 to-purple-600 bg-clip-text text-transparent;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-slate-200 rounded-xl shadow-sm;
+  }
+
+  /* Editor de contenido */
+  .content-editor textarea {
+    @apply font-mono text-xs leading-relaxed resize-y min-h-[300px];
+  }
+
+  /* Preview de contenido HTML */
+  .html-preview {
+    @apply text-slate-700 leading-relaxed;
+  }
+  .html-preview h1 { @apply text-2xl font-bold text-slate-900 mb-4 mt-6; }
+  .html-preview h2 { @apply text-xl font-semibold text-slate-800 mb-3 mt-5 border-b border-slate-200 pb-2; }
+  .html-preview h3 { @apply text-base font-semibold text-slate-800 mb-2 mt-4; }
+  .html-preview p { @apply mb-4 text-slate-700 text-sm leading-relaxed; }
+  .html-preview ul, .html-preview ol { @apply mb-4 pl-6 text-sm text-slate-700; }
+  .html-preview li { @apply mb-1.5; }
+  .html-preview strong { @apply text-slate-900 font-semibold; }
+  .html-preview a { @apply text-brand-600 hover:text-brand-700 underline; }
+
+  /* ── Skeleton shimmer ─────────────────────────────────────────── */
+  .skeleton {
+    @apply bg-slate-200 rounded-lg relative overflow-hidden;
+  }
+  .skeleton::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255,255,255,0.4) 50%,
+      transparent 100%
+    );
+    animation: shimmer 1.6s ease-in-out infinite;
+    transform: translateX(-100%);
+  }
+
+  /* ── GSAP pre-state helper ────────────────────────────────────── */
+  .gsap-hidden {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  /* ── Page transition container ───────────────────────────────── */
+  .will-change-transform {
+    will-change: transform, opacity;
+  }
+}
+
+@layer utilities {
+  /* Shimmer keyframe */
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+}
+

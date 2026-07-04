@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Build
+build/
+dist/
+
+# Environment variables (NUNCA subir al repo)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Configuraciones locales con datos sensibles
+.wp-config.json
+.ai-config.json
+
+# Historial local
+.history-data.json
+
+# Firebase
+.firebase/
+.firebaserc.local
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# TypeScript
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+.local-settings.json
+.vercel
+.env*
