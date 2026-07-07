@@ -66,7 +66,7 @@ export default function SeoClient() {
             <span className="text-sm font-bold text-slate-700">Volver a Rankerize</span>
           </Link>
           <div className="flex gap-4">
-            <Link href="/login" className="px-5 py-2 text-sm font-bold text-slate-700 hover:text-white transition-colors">
+            <Link href="/" className="px-5 py-2 text-sm font-bold text-slate-700 hover:text-white transition-colors">
               Iniciar Sesión
             </Link>
             <Link href="#planes" className="px-5 py-2 bg-brand-600 hover:bg-brand-500 text-white text-sm font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)]">

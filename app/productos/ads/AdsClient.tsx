@@ -205,7 +205,7 @@ export default function AdsClient() {
           <h2 className="font-display text-4xl md:text-5xl font-black mb-6">Convierte $20 en Tráfico Cautivo</h2>
           <p className="text-xl text-slate-600 mb-10 font-light">Arranca tu campaña en menos de 60 segundos.</p>
           <Link 
-            href="/login" 
+            href="/" 
             className="inline-flex px-10 py-5 bg-gradient-to-r from-brand-600 to-cyan-500 hover:from-brand-500 hover:to-cyan-400 text-white rounded-2xl font-bold text-xl transition-all shadow-[0_0_40px_rgba(56,189,248,0.3)] hover:shadow-[0_0_60px_rgba(56,189,248,0.5)] hover:-translate-y-1 items-center gap-3"
           >
             <Rocket className="w-6 h-6" />

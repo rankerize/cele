@@ -12,7 +12,7 @@ export default async function RootDashboardLayout({
   const session = await getIronSession<SessionData>(cookieStore, sessionOptions)
 
   if (!session.isLoggedIn) {
-    redirect('/login')
+    redirect('/')
   }
 
   return (

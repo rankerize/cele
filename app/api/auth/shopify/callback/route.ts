@@ -27,7 +27,7 @@ export async function GET(request: NextRequest) {
   const session = await getIronSession<SessionData>(cookieStore, sessionOptions)
 
   if (!session.isLoggedIn || !session.user?.uid) {
-    return NextResponse.redirect(`${APP_URL}/login`)
+    return NextResponse.redirect(`${APP_URL}/`)
   }
 
   const { searchParams } = new URL(request.url)

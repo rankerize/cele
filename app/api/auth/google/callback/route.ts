@@ -20,11 +20,11 @@ export async function GET(request: NextRequest) {
   console.log(`[OAuth Callback] host=${host} proto=${proto}`)
 
   if (error) {
-    return NextResponse.redirect(`${baseUrl}/login?error=oauth_denied`)
+    return NextResponse.redirect(`${baseUrl}/?error=oauth_denied`)
   }
 
   if (!code) {
-    return NextResponse.redirect(`${baseUrl}/login?error=no_code`)
+    return NextResponse.redirect(`${baseUrl}/?error=no_code`)
   }
 
   try {
@@ -124,6 +124,6 @@ export async function GET(request: NextRequest) {
 
   } catch (err) {
     console.error('[OAuth Callback] Error:', err)
-    return NextResponse.redirect(`${baseUrl}/login?error=token_exchange`)
+    return NextResponse.redirect(`${baseUrl}/?error=token_exchange`)
   }
 }

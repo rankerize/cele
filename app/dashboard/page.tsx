@@ -11,7 +11,7 @@ export default async function ProjectsHubPage() {
   const userId = session.user?.uid
 
   if (!session.isLoggedIn || !userId) {
-    redirect('/login')
+    redirect('/')
   }
 
   // Fetch user projects

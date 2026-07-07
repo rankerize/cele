@@ -42,6 +42,6 @@ export async function GET(request: Request) {
     })
   } catch (err) {
     console.error('[Auth/Google] Error generando URL de OAuth:', err)
-    return NextResponse.redirect(`${base}/login?error=oauth_config`)
+    return NextResponse.redirect(`${base}/?error=oauth_config`)
   }
 }

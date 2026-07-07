@@ -202,7 +202,7 @@ export default function Sidebar() {
   async function handleLogout() {
     setLoggingOut(true)
     await fetch('/api/auth/logout', { method: 'POST' })
-    router.push('/login')
+    router.push('/')
     router.refresh()
   }
 
