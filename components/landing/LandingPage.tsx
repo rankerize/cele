@@ -185,8 +185,8 @@ export default function LandingPage({ isLoggedIn }: { isLoggedIn: boolean }) {
     { scope: containerRef }
   )
 
-  const ctaHref = isLoggedIn ? '/dashboard' : '/login'
-  const ctaLabel = isLoggedIn ? 'Entrar a la plataforma' : 'Iniciar sesión'
+  const ctaHref = '/'
+  const ctaLabel = 'Empezar demo'
 
   return (
     <div
@@ -252,7 +252,7 @@ export default function LandingPage({ isLoggedIn }: { isLoggedIn: boolean }) {
                 href={ctaHref}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-emerald-600/25 transition hover:-translate-y-0.5 hover:bg-emerald-700"
               >
-                {isLoggedIn ? 'Abrir dashboard' : 'Entrar a Cele'}
+                Empezar demo
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
               <a
